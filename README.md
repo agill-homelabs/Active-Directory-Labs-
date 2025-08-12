@@ -37,9 +37,19 @@ From here we will be installing Active Directory on our newly named PC. This is 
 Once the install is complete, I will promote the server toa domain controller using the drop down menu in Server Manager
 <img width="1014" height="882" alt="image" src="https://github.com/user-attachments/assets/9e033f40-c0ae-42e5-a1bc-93de145ffedb" /> 
 
-This will bring up another configuration wizard. From here, I will follow the wizard and name our domain, add a password and install. 
+This will bring up another configuration wizard. From here, I will follow the wizard and name my domain, add a password and install. 
 <img width="1020" height="876" alt="image" src="https://github.com/user-attachments/assets/dccc87ae-bb44-4d01-b3f4-269045987c76" />
 
 <img width="1020" height="876" alt="image" src="https://github.com/user-attachments/assets/6dfb8583-f51d-4273-a5c4-e22d0b02a6b8" />
+After a successful install, the VM will restart. From here, I will go to Start > Administrative Tools > Active Directory Users and Computers and right click my new domain (mydomain.com) and then go to new > organizational unit.<img width="1017" height="872" alt="image" src="https://github.com/user-attachments/assets/adde4d19-0a3b-49e6-b7b6-56f9288a04d7" />
+From here, I will name it _ADMINS and make sure the "Protect container from accidental deletion" is checked. <img width="1018" height="880" alt="image" src="https://github.com/user-attachments/assets/6194dc60-efab-4955-8be6-99b0e9abe015" />
+From here, I will creating a user within Active Directory. This is done by right clicking _Admins and click new > user and fill out the information with my name and then the username. After clicking next, I will be prompted to make and confirm my password for this account. I will make sure that this password never expires (which isn't preferred in the real world, but for ease in this lab- I have) <img width="1025" height="877" alt="image" src="https://github.com/user-attachments/assets/d62eff4e-a765-43d6-b666-59a09117b26f" />
+<img width="1019" height="862" alt="image" src="https://github.com/user-attachments/assets/4df268ac-2946-4260-ab6b-4a0c72646b3c" />
+Now I will make this user a member of the Domain Admins group. This done by right-clicking the user name, going down to Properties, and clicking the "member of" tab. From here, I will click the add button and type in "Domain Admins" and press check names. Then press ok and apply.  <img width="1014" height="877" alt="image" src="https://github.com/user-attachments/assets/af9ef8cb-498f-4d3d-96c7-d12e24d2348b" />
+<img width="419" height="546" alt="image" src="https://github.com/user-attachments/assets/132ed048-308b-4d86-af2e-3dee1f34cc7b" />
+Now, we want to make it so that the client can access the internet through the domain controller and virtual network; 
+and this is done by using Remote Access Server (RAS) / Network Access Translation (NAT). This must be added to the Domain Controller. In Server Manager, I will go to Add roles and features and then we’re going to check Remote Access and then click next and next again to check the Routing box and add it, then next through until you click install. After the install, I clicked on tools and scrolled down to Routing and Remote Access. <img width="622" height="447" alt="image" src="https://github.com/user-attachments/assets/39a8f286-d6f5-4ab0-9ab8-5548da5d424e" />
+From here, I right clicked DC (local) > Configure and Enable Routing and Remote Access and then selected NAT.<img width="623" height="446" alt="image" src="https://github.com/user-attachments/assets/eb2bf16d-2d2a-43af-a20f-8363e973c2c3" />
+
 
 
