@@ -75,6 +75,7 @@ After the install, I will navigate to Tools > DHCP. On the left panel, I'll clic
 <img width="509" height="420" alt="image" src="https://github.com/user-attachments/assets/cdaf9185-8f19-49eb-bae1-30956c9243ce" />
 
 After the wizard is complete, I will authorize domain under the DHCP server and then refresh. This will activate our IPv4 and IPv6 under the DHCP Server. 
+
 <img width="584" height="399" alt="image" src="https://github.com/user-attachments/assets/0845eda0-b9df-457d-8d60-1472f174cf3f" />
 
 
