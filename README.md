@@ -69,6 +69,18 @@ This is where the previously renamed NICs will come in handy, I have to select w
 I now have to configure the DNS Server to run on my Domain Controller. I will go back to Add Roles and Features in the Server Manager. However, this time I will be choosing the DHCP Server option and continue to follow the wizard until the install is complete. <img width="777" height="560" alt="image" src="https://github.com/user-attachments/assets/91aed694-9c3f-4d3c-ba4e-982bb926b084" /> 
 <img width="785" height="561" alt="image" src="https://github.com/user-attachments/assets/b21969e0-fcab-47f2-946f-69287dc4b1a9" />
 
+After the install, I will navigate to Tools > DHCP. On the left panel, I'll click the domain and right click IPv4 > New Scope. The DHCP server will be assigning IP addresses for any computer on the network. I will be setting up a range of 172.16.0.100–200. This will allow the DHCP server to assign 100 IP addresses on the network. I can also adjust the amount of time for the lease as well. This allows us to control the length of time a device will be allowed to use the IP address, essentially freeing up IPs for future use with new devices. Following the wizard, I will configure the IP address range, lease duration, router (default gateway), and finally the activation of the scope. 
+<img width="512" height="427" alt="image" src="https://github.com/user-attachments/assets/a617cd48-28d4-4458-92ee-da5c01040466" />
+<img width="510" height="432" alt="image" src="https://github.com/user-attachments/assets/b322dbec-d503-4e7f-b771-f85a387c2197" />
+<img width="509" height="420" alt="image" src="https://github.com/user-attachments/assets/cdaf9185-8f19-49eb-bae1-30956c9243ce" />
+
+After the wizard is complete, I will authorize domain under the DHCP server and then refresh. This will activate our IPv4 and IPv6 under the DHCP Server. 
+<img width="584" height="399" alt="image" src="https://github.com/user-attachments/assets/0845eda0-b9df-457d-8d60-1472f174cf3f" />
+
+
+
+
+
 
 
 
