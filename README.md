@@ -81,13 +81,18 @@ After the wizard is complete, I will authorize domain under the DHCP server and 
 Now that the DHCP Server is set up, I will be using PowerScript to add users to Active Directory. To be able to accomplish this, I'll be disabling the security protections so that I can freely access the internet and download a the PowerShell script. Its worth noting that in the real world, this would pose as a security risk and would frowned upon. But since this is a lab environment with minimal risks, it is not an issue. To do this I will go back to Server Manager on the DC, select Configure this Local Server and turn off IE Enhanced Security Configuration. 
 <img width="1014" height="701" alt="image" src="https://github.com/user-attachments/assets/7fa980aa-dbcc-4278-86a0-8e95fbc8a3e2" />
 
-Now that its turned off, I obtained the zip containing the PowerShell scripts and a few other items. To start, I want to open the names.txt file and put my name at the top of the list; and save. <img width="1008" height="734" alt="image" src="https://github.com/user-attachments/assets/af78a799-c37c-4344-af77-44e180d8ef45" />
+Now that its turned off, I obtained the zip containing the PowerShell scripts and a few other items (full code and txt file found in my repository). To start, I want to open the names.txt file and put my name at the top of the list; and save. <img width="1008" height="734" alt="image" src="https://github.com/user-attachments/assets/af78a799-c37c-4344-af77-44e180d8ef45" />
 
 Next, from the start menu, I will select  Windows Powershell ISE and then open the script named 1_CREATE_USERS inside of your PowerShell ISE instance. In the bottom half, I will input the following: Set-ExecutionPolicy unrestrcited and click enter. Click Yes to All when prompted. <img width="1007" height="738" alt="image" src="https://github.com/user-attachments/assets/73e1c95b-6b88-458b-9ada-7fc596ba9bff" />
 
 From here, I will direct PowerShell to the directory which has my name.txt file. Do this by entering cd C:\Users\["your login]\Desktop\AD_PS-master. By pressing the green run button, I am prompted on how many times to run the script- I chose run once. After the completion of the script, I can double check that the users were created in Server Manager > Active Directory Users and Computers. <img width="757" height="534" alt="image" src="https://github.com/user-attachments/assets/a82c6b94-1b75-4a54-a06d-c6356b8ef4e4" />
 
+I will now create a new virtual machine that will act as a user in the domain (aka an employee computer). I will name this CLIENT1. After creating the machine, I will adjust the settings in General > Advanced > Drag'n'Drop > Bidirectional. Additionally, I will change the settings under Network > Adapter 1 > and set the Attached to: box to NAT.  Then, Network > Adapter 2 > Select Enable Network Adapter, change the Attached to: to Internal Network and leave the Name to intnet, click Okay and double click your machine to boot it up. 
+<img width="1143" height="706" alt="image" src="https://github.com/user-attachments/assets/e7a55c95-acbd-4e65-a547-2d1bf66d5ffd" />
+<img width="1146" height="713" alt="image" src="https://github.com/user-attachments/assets/e0497aee-43f8-4048-a17d-ba3ff7352d42" />
+<img width="1143" height="712" alt="image" src="https://github.com/user-attachments/assets/739bd133-5802-477d-941d-47331fb2bd88" />
 
+Once everything is set up, I will be renaming the PC (to CLIENT1), as well as, have it join the domain as a user. To do this, we must right-cick Start > System > Rename this PC (advanced).  
 
 
 
